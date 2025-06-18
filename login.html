@@ -1,0 +1,224 @@
+<!-- N1.html - Our Story Page with Preloader and Transitions -->
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Plate2Purpose - login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- CSS FILES -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/tooplate-wedding-lite.css">
+  <style>
+    .spinner-rotate img {
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <section class="preloader">
+    <div class="spinner">
+      <span class="spinner-rotate">
+        <img src="images/recycle-sign.png" alt="Loading..." style="width: 60px; height: 60px;">
+      </span>
+    </div>
+  </section>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a href="index.html" class="navbar-brand mx-auto mx-lg-0">
+        <span>Plate</span><span class="brand-icon">2♻️</span><span>Purpose</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Homepage</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Our Story Section -->
+            <section class="people-section section-padding" id="section_4">
+            <style>
+                .auth-form {
+                background-color: #ffffff;
+                padding: 30px;
+                border-radius: 16px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+                }
+                .auth-form h2 {
+                font-family: 'Amatic SC', cursive;
+                font-size: 36px;
+                }
+                .auth-form label {
+                font-weight: 600;
+                color: #374151;
+                }
+                .auth-form .input-group {
+                position: relative;
+                }
+                .auth-form .form-control {
+                border-radius: 8px;
+                padding-right: 40px;
+                }
+                .toggle-password {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: #6b7280;
+                font-size: 16px;
+                }
+            </style>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+            <div class="container">
+                <div class="row">
+
+                <div class="col-lg-12 col-12">
+                    <div class="section-title-wrap mb-5">
+                    <h2 class="section-title">Sign In & Sign Up</h2>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-5 col-12 me-auto">
+                    <nav>
+                    <div class="nav nav-tabs flex-lg-column align-items-baseline" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-signin-tab" data-bs-toggle="tab" data-bs-target="#nav-signin" type="button" role="tab" aria-controls="nav-signin" aria-selected="true">
+                        <h3 style="font-family: 'Amatic SC', cursive;">Sign In</h3>
+                        </button>
+
+                        <button class="nav-link" id="nav-signup-tab" data-bs-toggle="tab" data-bs-target="#nav-signup" type="button" role="tab" aria-controls="nav-signup" aria-selected="false">
+                        <h3 style="font-family: 'Amatic SC', cursive;">Sign Up</h3>
+                        </button>
+                    </div>
+                    </nav>
+                </div>
+
+                <div class="col-lg-8 col-md-6 col-12">
+                    <div class="tab-content" id="nav-tabContent">
+
+                    <!-- Sign In Tab -->
+                    <div class="tab-pane fade show active auth-form" id="nav-signin" role="tabpanel" aria-labelledby="nav-signin-tab">
+                        <h2 class="text-center mb-4">Welcome Back!</h2>
+                        <form onsubmit="return validateLogin();">
+                        <div class="mb-3">
+                            <label for="signin-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="signin-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signin-password" class="form-label">Password</label>
+                            <div class="input-group">
+                            <input type="password" class="form-control" id="signin-password" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('signin-password', this)"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 w-100">Sign In</button>
+                        </form>
+                    </div>
+
+                    <!-- Sign Up Tab -->
+                    <div class="tab-pane fade auth-form" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+                        <h2 class="text-center mb-4">Create Account</h2>
+                        <form onsubmit="event.preventDefault(); alert('Sign Up submitted!');">
+                        <div class="mb-3">
+                            <label for="signup-name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="signup-name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signup-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="signup-email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signup-password" class="form-label">Password</label>
+                            <div class="input-group">
+                            <input type="password" class="form-control" id="signup-password" placeholder="Create a password" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('signup-password', this)"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success rounded-pill px-4 py-2 w-100">Sign Up</button>
+                        </form>
+                    </div>
+
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+            <script>
+                function togglePassword(id, btn) {
+                const input = document.getElementById(id);
+                const icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+                }
+
+                function validateLogin() {
+                const email = document.getElementById("signin-email").value;
+                const password = document.getElementById("signin-password").value;
+
+                if (email === "malothdhurgesh@gmail.com" && password === "Dhurgesh") {
+                    window.location.href = "dashboard.html";
+                    return false;
+                } else {
+                    alert("❌ Incorrect email or password!");
+                    return false;
+                }
+                }
+            </script>
+            </section>
+
+
+
+
+
+
+  <!-- JavaScript Files for Smooth Preloader and Transitions -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/click-scroll.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/magnific-popup-options.js"></script>
+  <script src="js/custom.js"></script>
+
+  <!-- Optional: Auto-highlight active nav link -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const currentPage = location.pathname.split("/").pop();
+      document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
